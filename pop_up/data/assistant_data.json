@@ -1,0 +1,884 @@
+{
+  "profile": {
+    "linked": true,
+    "studentName": "GD",
+    "username": "",
+    "authType": "auto",
+    "university": "Sevilla 26",
+    "degree": "",
+    "moodleEntryUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/my/",
+    "moodleBaseUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla",
+    "moodleProfileUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/user/profile.php?id=157540",
+    "icsUrl": "",
+    "apiToken": "",
+    "sessionCookie": "",
+    "userid": 157540,
+    "userPictureUrl": "",
+    "lastSync": "11/11/2026 02:47",
+    "openMode": "both",
+    "avatarInitials": "G"
+  },
+  "courses": [
+    {
+      "id": 4876,
+      "fullname": "2DAW_CTOP_Optativa-Iniciación a la programación en Python-AN05084",
+      "shortname": "2DAW_CTOP",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4876",
+      "color": "#f43f5e",
+      "progress": 0
+    },
+    {
+      "id": 4874,
+      "fullname": "2DAW_DIW_Diseño de interfaces Web",
+      "shortname": "2DAW_DIW",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4874",
+      "color": "#6366f1",
+      "progress": 0
+    },
+    {
+      "id": 4873,
+      "fullname": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "shortname": "2DAW_DWEC",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4873",
+      "color": "#6366f1",
+      "progress": 0
+    },
+    {
+      "id": 4875,
+      "fullname": "2DAW_PI_Proyecto Intermodular de Desarrollo de Aplicaciones Web",
+      "shortname": "2DAW_PI",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4875",
+      "color": "#f59e0b",
+      "progress": 0
+    },
+    {
+      "id": 4864,
+      "fullname": "Desarrollo web en entorno servidor",
+      "shortname": "4864",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4864",
+      "color": "#ec4899",
+      "progress": 0
+    },
+    {
+      "id": 5517,
+      "fullname": "Despliegue de aplicaciones web",
+      "shortname": "5517",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=5517",
+      "color": "#10b981",
+      "progress": 0
+    },
+    {
+      "id": 278,
+      "fullname": "Punto de encuentro del I.E.S. Isidro de Arcenegui y Carmona",
+      "shortname": "41002694_punto_encuentro",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=278",
+      "color": "#f59e0b",
+      "progress": 0
+    },
+    {
+      "id": 4823,
+      "fullname": "TUTORÍA 2DAW",
+      "shortname": "TUTORÍA 2DAW",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4823",
+      "color": "#f59e0b",
+      "progress": 0
+    },
+    {
+      "id": 6146,
+      "fullname": "Sistemas informáticos",
+      "shortname": "SISTEMAS INF",
+      "viewurl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=6146",
+      "color": "#f43f5e",
+      "progress": null
+    }
+  ],
+  "moodleTasks": [
+    {
+      "id": "moodle-ev-75148",
+      "title": "Se abre 2DAW_DIW_T05_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-11-13",
+      "dueTime": "11:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217872",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75362",
+      "title": "Se cierra 2DAW_DIW_T05_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-11-13",
+      "dueTime": "12:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217872",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-96613",
+      "title": "Vencimiento de 3.1 Realización de la actividad desarrollada en el contenido 3.1 (Filezilla Ftp Server)",
+      "course": "Despliegue de aplicaciones web",
+      "courseCode": "DESPLIEGUE",
+      "dueDate": "2026-11-14",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Crea un archivo llamado actividad30tunombre2627.odt con LibreOffice con explicaciones y capturas de pantalla necesarias para realizar el contenido 3.1",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=259412&action=editsubmission",
+      "source": "moodle",
+      "color": "#10b981"
+    },
+    {
+      "id": "moodle-ev-184173",
+      "title": "Vencimiento de T2- Tarea 3 - Análisis y Comparación de Sistemas Operativos_MC",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-11-16",
+      "dueTime": "20:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se entregará el informe en .pdf y la presentación también en .pdf.\r\n\r\nEn esta tarea, se va a trabajar en grupos de tres personas para analizar y comparar un sistema operativo asignado. La tarea se divide en las siguientes etapas:\r\n\r\n\r\nEtapa 1: Investigación\r\n\r\nA cada grupo de alumnos se les ha asignado el siguiente SO:\r\n\r\nGrupo 1. Android\r\n\r\nNombres: Candela Erika Abel\r\n\r\n\r\nGrupo 2. iOS \r\n\r\nNombres: Mario y Eduardo\r\n\r\n\r\nGrupo 3. OpenBSD\r\n\r\nNombres: Lucía y Rubén\r\n\r\n\r\nGrupo 4. MacOS\r\n\r\nNombres: Aarón y Marcos\r\n\r\n\r\nGrupo 5. Debian\r\n\r\nNombres: Iván y Rodrigo\r\n\r\n\r\nGrupo 6. Ubuntu\r\n\r\nNombres: Daniel y Antonio\r\n\r\n\r\nGrupo 7. Windows 11\r\n\r\n\r\n\r\nNombres: Gonzalo y Gonzalo\r\n\r\n\r\n\r\n\r\nGrupo 8: FreeBSD\r\n\r\n\r\n\r\nNombres: Fran y Aimar\r\n\r\n\r\n\r\n\r\nGrupo 9: Fedora\r\n\r\n\r\n\r\nNombres: Rafa y Martín\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nCada grupo deberá investigar y recopilar información sobre el sistema operativo asignado, centrándose en sus características, funciones, arquitectura, requisitos, campos de aplicación y licencia de uso. Se deben utilizar fuentes confiables y actualizadas. Añadir Bibliografía.\r\n\r\n\r\nEtapa 2: Informe\r\n\r\nCon la información recopilada, cada grupo preparará un informe que detalla los aspectos clave de su sistema operativo. El informe debe ser claro y organizado, y debe incluir todos los elementos requeridos.\r\nEl informe debe incluir los siguientes puntos:\r\n\r\n\r\nCaracterísticas clave del sistema operativo. \r\nFunciones principales del sistema operativo. \r\nArquitectura y diseño general del sistema operativo. \r\nRequisitos de hardware y software. \r\nCampos de aplicación típicos del sistema operativo. \r\nLicencia de uso del sistema operativo. \r\nVentajas y desventajas del sistema operativo.\r\nComparativa con SO similares.\r\n\r\n\r\nEtapa 3: Presentación en Clase\r\n\r\n\r\nCada grupo realizará una presentación en clase para compartir los hallazgos con sus compañeros. \r\n\r\n\r\nCriterios de Evaluación:\n  \r\n\r\nb) Se han analizado las características, funciones y arquitectura de un sistema operativo.\r\nc) Se han comparado sistemas operativos en base a sus requisitos, características, campos de aplicación y licencias de uso.\r\n\r\n\r\nOJO!!! Los grupos que exponen el día 17/11/2026 son el grupo 3, 5 y 9. Si no se puede asistir otro grupo expone y si no trae justificación el trabajo para la persona que falte sin justificación tendrá un 0.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=461668&action=editsubmission",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-184174",
+      "title": "Vencimiento de T2_Tarea 4: \"Instalación Sistemas Operativos\"_MC",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-11-18",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Basándonos en los S.O.:\r\n\r\n\r\nUbuntu 22.04 LTS.\r\n\r\n\r\nDebian \r\n\r\n\r\nWindows 10 \r\n\r\n\r\nAndroid-x86 (opcional): https://www.fosshub.com/Android-x86.html\r\n\r\n\r\n \r\n \r\nEjercicio 1_ Requisitos para la instalación de un S.O.\r\nInvestiga los requisitos mínimos de cada sistema operativo e indica:\r\n\r\n\r\nProcesador necesario.\r\n\r\n\r\nMemoria RAM mínima.\r\n\r\n\r\nEspacio mínimo de almacenamiento.\r\n\r\n\r\nArquitectura compatible (32 o 64 bits).\r\n\r\n\r\nFirmware compatible (BIOS o UEFI).\r\n\r\n\r\nRealiza una tabla comparativa.\r\nEjercicio 2. Proceso de instalación\r\nExplica cómo se instalaría cada sistema operativo. Debes documentar:\r\n\r\n\r\nEnlace de descarga de la imagen ISO.\r\n\r\n\r\nQué es una imagen ISO.\r\n\r\n\r\nQué es un USB de arranque.\r\n\r\n\r\nCómo se inicia un equipo desde un USB.\r\n\r\n\r\nSelección del idioma y configuración inicial.\r\n\r\n\r\nPreparación y particionado del disco duro.\r\n\r\n\r\nSistemas de archivos utilizados.\r\n\r\n\r\nCreación de usuarios y contraseñas.\r\n\r\n\r\nFinalización de la instalación y primer inicio.\r\n\r\n\r\nEjercicio 3. Actualización del sistema operativo\r\nInvestiga cómo se actualiza cada sistema operativo.\r\nResponde:\r\n\r\n\r\n¿Qué significa actualizar un sistema operativo?\r\n\r\n\r\n¿Por qué es importante mantenerlo actualizado?\r\n\r\n\r\n¿Qué diferencia existe entre una actualización de seguridad y una actualización de características?\r\n\r\n\r\n¿Qué herramienta utiliza cada sistema operativo para actualizarse?\r\n\r\n\r\n¿Las actualizaciones son automáticas o manuales?\r\n\r\n\r\n¿Cómo se comprueba si existen actualizaciones?\r\n\r\n\r\n¿Qué riesgos existen al utilizar un sistema operativo sin actualizar?\r\n\r\n\r\nInvestiga especialmente estos conceptos:\r\n\r\n\r\nWindows Update.\r\n\r\n\r\nGestor de paquetes APT.\r\n\r\n\r\nComandos apt update y apt upgrade.\r\n\r\n\r\nActualizaciones OTA en Android.\r\n\r\n\r\nEjercicio 4. Recuperación del sistema operativo\r\nInvestiga qué herramientas permiten recuperar un sistema operativo cuando presenta errores o deja de funcionar correctamente.\r\nDebes explicar para cada herramienta:\r\n\r\n\r\nPara qué sirve.\r\n\r\n\r\nEn qué situaciones se utiliza.\r\n\r\n\r\nCómo se accede a ella.\r\n\r\n\r\nQué problemas permite solucionar.\r\n\r\n\r\nInvestiga las siguientes técnicas:\r\nUbuntu 22.04 y Debian:\r\n\r\n\r\nGRUB.\r\n\r\n\r\nModo recovery.\r\n\r\n\r\nLive USB.\r\n\r\n\r\nReparación de paquetes.\r\n\r\n\r\nWindows 10 y Windows 11:\r\n\r\n\r\nRestaurar sistema.\r\n\r\n\r\nReparación de inicio.\r\n\r\n\r\nModo seguro.\r\n\r\n\r\nEntorno de recuperación de Windows (WinRE).\r\n\r\n\r\nRestablecimiento del equipo.\r\n\r\n\r\nAndroid-x86:\r\n\r\n\r\nCopias de seguridad.\r\n\r\n\r\nOpciones de arranque y recuperación disponibles.\r\n\r\n\r\nReinstalación del sistema.\r\n\r\n\r\n \r\nEjercicio 5. Casos prácticos\r\n\r\nResuelve las siguientes situaciones. Debes justificar cada respuesta:\r\nCaso 1. Windows no arranca\r\nUn ordenador con Windows 10 muestra un error al iniciar y no consigue llegar al escritorio.\r\n\r\n\r\n¿Qué herramienta de recuperación utilizarías?\r\n\r\n\r\n¿Qué es la reparación de inicio?\r\n\r\n\r\n¿Qué otras alternativas existen?\r\n\r\n\r\nCaso 2. Ubuntu no inicia correctamente\r\nDespués de instalar una actualización, Ubuntu muestra un error durante el arranque.\r\n\r\n\r\n¿Qué es GRUB?\r\n\r\n\r\n¿Qué es el modo recovery?\r\n\r\n\r\n¿Qué podrías hacer para intentar recuperar el sistema?\r\n\r\n\r\nCaso 3. Ordenador inestable\r\nUn equipo funciona muy lento después de instalar un programa desconocido.\r\n\r\n\r\n¿Qué es el modo seguro?\r\n\r\n\r\n¿Para qué sirve?\r\n\r\n\r\n¿Cómo podrías recuperar el funcionamiento del equipo?\r\n\r\n\r\nCaso 4. Actualizaciones pendientes\r\nUn ordenador lleva varios meses sin actualizarse.\r\n\r\n\r\n¿Qué riesgos puede tener?\r\n\r\n\r\n¿Qué herramienta utilizarías en Windows?\r\n\r\n\r\n¿Qué comandos utilizarías en Ubuntu o Debian?\r\n\r\n\r\nCaso 5. Pérdida de archivos\r\nUn usuario elimina accidentalmente documentos importantes.\r\n\r\n\r\n¿Qué es una copia de seguridad?\r\n\r\n\r\n¿Por qué es importante realizar copias periódicas?\r\n\r\n\r\n¿Qué diferencia existe entre recuperar el sistema y recuperar archivos?\r\n\r\n\r\nCaso 6. Fallo del disco duro\r\nUn ordenador deja de reconocer el disco donde está instalado el sistema operativo.\r\n\r\n\r\n¿Se puede solucionar mediante un punto de restauración?\r\n\r\n\r\n¿Qué utilidad tendría un USB de arranque?\r\n\r\n\r\n¿Por qué es importante disponer de copias de seguridad?\r\n\r\n\r\n\r\n\r\nFormato de entrega\r\nDebes entregar un único documento en formato PDF.\r\nEl documento debe incluir:\r\n\r\n\r\n\r\nNombre: T2_Tarea4_Apellido1_Apellido2_Nombre.pdf",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=461669&action=editsubmission",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-184171",
+      "title": "Vencimiento de T2 - Tarea 1 - Actividades Libro_MC",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-11-21",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "En esta tarea se entregara un documento con todas las actividades propuesta en el libro, actividades, investiga y tipo test.\r\n\r\nPara la entrega de esta tarea, se entregará un .pdf con el siguiente formato:\r\n\r\nMi nombre es Juan Miguel Muñoz Salgado,  se entregará:\r\n          T2_Actividades_Libro_Munoz_Salgado_Juan_Miguel.pdf",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=461664&action=editsubmission",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-183946",
+      "title": "Vencimiento de 2DAW_DIW_UD03_EX02",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-11-26",
+      "dueTime": "10:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Vencimiento de Tarea",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=460825&action=editsubmission",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-185761",
+      "title": "Vencimiento de 2DAW_DWEC_UD03_EX01",
+      "course": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "courseCode": "2DAW_DWEC_",
+      "dueDate": "2026-11-27",
+      "dueTime": "11:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "El enunciado del examen se dará con papel con su hoja de apoyo (en caso de que fuese necesaria).\r\nSe adjuntará un zip con lo necesario para el examen (la template).",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=464623&action=editsubmission",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75149",
+      "title": "Se abre 2DAW_DIW_T06_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-12-01",
+      "dueTime": "08:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217873",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75363",
+      "title": "Se cierra 2DAW_DIW_T06_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-12-01",
+      "dueTime": "09:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217873",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75577",
+      "title": "Se abre 2DAW_DWEC_T01_EX01",
+      "course": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "courseCode": "2DAW_DWEC_",
+      "dueDate": "2026-10-01",
+      "dueTime": "11:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "2DAW - DWEC - EXAMEN TEMA 01",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=218967",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75686",
+      "title": "Se cierra 2DAW_DWEC_T01_EX01",
+      "course": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "courseCode": "2DAW_DWEC_",
+      "dueDate": "2026-10-01",
+      "dueTime": "12:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "2DAW - DWEC - EXAMEN TEMA 01",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=218967",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-96599",
+      "title": "Vencimiento de 1.1 Realizar el tutorial 1.3  (CE1.c,CE1.d,CE1.f)",
+      "course": "Despliegue de aplicaciones web",
+      "courseCode": "DESPLIEGUE",
+      "dueDate": "2026-10-03",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se pide hacer el tutorial 1.3 de instalación de Tomcat y la instalación de apache y php (vista en el tutorial 1.1) en un archivo llamado actividad1.3tunombre.odt con LibreOffice Writer, con explicaciones y capturas de pantalla que demuestren que has hecho las instalaciones.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=259372&action=editsubmission",
+      "source": "moodle",
+      "color": "#10b981"
+    },
+    {
+      "id": "moodle-ev-136123",
+      "title": "Vencimiento de Actividad Introductoria DWEC_T02",
+      "course": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "courseCode": "2DAW_DWEC_",
+      "dueDate": "2026-10-04",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Preparad en grupo una presentación con ayuda de la IA sobre el contenido de este tema.\r\nLeedla y ensayad la exposición durante unos 20 minutos, repartiendo las partes entre el grupo.\r\nAnotad las dudas de contenido que os vayan surgiendo mientras la preparáis.\r\nExpondréis la presentación en clase a continuación.\r\nNota: incluid recursos prácticos en la presentación y haced participar al resto de la clase para que resulte más dinámica.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=354759&action=editsubmission",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-148712",
+      "title": "Vencimiento de Actividad \"DEV TOOLS\" DWEC_T02",
+      "course": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "courseCode": "2DAW_DWEC_",
+      "dueDate": "2026-10-04",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Investigad en grupo cómo se usan las herramientas de desarrollo (DevTools) del navegador y preparad un tutorial sobre las de uno de estos: Chrome, Firefox o Edge.\r\nEl objetivo es que aprendáis a usar las DevTools en vuestro propio trabajo.\r\nComo mínimo, debéis mostrar estas áreas: Elementos, Consola, Fuentes, Red y Modo dispositivo. Cuantas más funcionalidades expliquéis, mejor.\r\nPresentaréis el tutorial a la clase, con demostraciones prácticas y algún momento en el que participen vuestros compañeros.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=369910&action=editsubmission",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-96703",
+      "title": "Vencimiento de Exposición UT1 Memorias y Placa Base",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-10-08",
+      "dueTime": "12:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Por grupos de cuatro o cinco personas se van a exponer los siguientes contenidos:\r\nMemoria Caché:\r\n- Niveles de caché (L1, L2, L3). Usa una imagen para mostrar la memoria caché dentro de la CPU.\r\n- Caché de instrucciones y de datos.\r\n- Política de reemplazo de caché.\r\n- Función de la caché en la aceleración del acceso a datos.\r\nMemoria RAM:\r\n- Tipos de RAM (DDR, DDR2, DDR3, DDR4, DDR5).\r\n- Capacidad y velocidad de la RAM.\r\n- Volatilidad de la RAM.\r\n- Función de la RAM en el almacenamiento temporal de datos y programas en ejecución.\r\n- Importancia de la RAM para el rendimiento general del sistema.\r\nDiscos Duros (Voluntario):\r\n- Tipos de discos duros (HDD y SSD).\r\n- Capacidad de almacenamiento.\r\n- Velocidad de lectura y escritura.\r\n- Particiones de disco y formato de archivos.\r\n- Importancia del disco duro como almacenamiento permanente en una computadora.\r\n\r\nAhora nos centraremos en la Placa Base\r\n- Tipos  \r\n- BIOS  \r\n- Memoria CMOS \r\n- Chipset \r\n- Socket para el procesador \r\n- Slots de memoria \r\n- Conectores disco duro \r\n- Ranuras de expansión \r\n- Conectores para dispositivos \r\n- Jumpers \r\n- Tamaños placa base \r\nDebéis buscar un manual de alguna placa base donde aparezcan los componentes. \r\nPodéis usar una presentación. Buscar información, fotos, videos, para vuestra presentación.\r\n\r\nEntrega:\r\nSe entregara dos documjentos:\r\n\r\nUn documento bien formado con todo el contenido (LibreOffice).\r\nUn documento con la presentación y una presentacion (LibreOffice).",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=259510&action=editsubmission",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-151865",
+      "title": "Vencimiento de 2DAW_DWEC_T02_EXAMEN_01",
+      "course": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "courseCode": "2DAW_DWEC_",
+      "dueDate": "2026-10-09",
+      "dueTime": "11:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "El enunciado se dará en papel.\r\nEn él se detallarán todos los detalles incluida la entrega.\r\nDescarga el archivo template de la entrega.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=381481&action=editsubmission",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75145",
+      "title": "Se abre 2DAW_DIW_UD02_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-10-13",
+      "dueTime": "08:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217868",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75359",
+      "title": "Se cierra 2DAW_DIW_UD02_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-10-13",
+      "dueTime": "09:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217868",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-96470",
+      "title": "Se abre Tema 1 - Examen Martes 15 Octubre 2026 Realizado",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-10-15",
+      "dueTime": "13:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Examen sobre los componentes",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=259523",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-68570",
+      "title": "Vencimiento de Entrega Prueba Práctica UD2",
+      "course": "Desarrollo web en entorno servidor",
+      "courseCode": "DESARROLLO",
+      "dueDate": "2026-10-15",
+      "dueTime": "14:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Entregar los archivos sin comprimir.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=198714",
+      "source": "moodle",
+      "color": "#ec4899"
+    },
+    {
+      "id": "moodle-ev-96798",
+      "title": "Se cierra Tema 1 - Examen Martes 15 Octubre 2026 Realizado",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-10-15",
+      "dueTime": "14:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Examen sobre los componentes",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=259523",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-139256",
+      "title": "Vencimiento de Portfolio: cómo trabaja un equipo de desarrollo software en un entorno real",
+      "course": "2DAW_PI_Proyecto Intermodular de Desarrollo de Aplicaciones Web",
+      "courseCode": "2DAW_PI_PR",
+      "dueDate": "2026-10-15",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Contexto:\r\nEn las empresas, un proyecto software no se reduce a programar: los equipos siguen metodologías, planifican, controlan versiones, prueban, despliegan y documentan su trabajo.\r\nEl objetivo de esta tarea es que investiguéis cómo se hace todo esto en el mundo real, para que podáis aplicar lo que os resulte útil en vuestro propio proyecto.\r\nQué tenéis que hacer:\r\nEn grupo, elaboraréis un portfolio que recoja las siguientes áreas de conocimiento del desarrollo de software:\r\n\r\nMetodologías de desarrollo y organización del equipo\r\nPlanificación del proyecto y estimación de costes\r\nIngeniería de requisitos\r\nControl de versiones\r\nCalidad del software y pruebas\r\nDespliegue e integración continua\r\nDocumentación y comunicación del equipo\r\n\r\nEstructura de cada área:\r\nCada área debe seguir la misma estructura:\r\n\r\nIntroducción: qué es y por qué la necesita un equipo real.\r\nEnumeración: qué opciones o enfoques existen.\r\nExplicación breve: en qué consiste cada uno, con sus ventajas e inconvenientes.\r\nAplicación práctica: cómo lo aplicaríais en vuestro propio proyecto.\r\nHerramientas: qué software existe para llevarlo a cabo.\r\nDemostración práctica: elegid una de las herramientas del punto anterior y preparad una demo breve de su uso básico. No se trata de un tutorial completo, sino de mostrar cómo se usaría en el día a día de un equipo. La demo puede hacerse en directo o grabarse en vídeo.\r\nFuentes: dónde habéis obtenido la información.\r\n\r\nEntrega y exposición:\r\nEl formato de entrega es libre (documento, presentación, web, repositorio...), al igual que su extensión. Expondréis el portfolio al resto de compañeros en clase, incluyendo las demos de cada área.\r\nValoración:\r\nCuanto más profesional, mejor documentado y mejor expuesto esté el trabajo, mayor será la valoración.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=364287",
+      "source": "moodle",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "moodle-ev-169029",
+      "title": "2DAW_CTOP_T01_EXAMEN_01",
+      "course": "2DAW_CTOP_Optativa-Iniciación a la programación en Python-AN05084",
+      "courseCode": "2DAW_CTOP_",
+      "dueDate": "2026-10-20",
+      "dueTime": "12:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Evento oficial del calendario de Moodle (2DAW_CTOP_Optativa-Iniciación a la programación en Python-AN05084).",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4876",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-152722",
+      "title": "Vencimiento de 2DAW_CTOP_T01_EXAMEN_01",
+      "course": "2DAW_CTOP_Optativa-Iniciación a la programación en Python-AN05084",
+      "courseCode": "2DAW_CTOP_",
+      "dueDate": "2026-10-20",
+      "dueTime": "13:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Descarga el contenido para el enunciado.\r\nSi el enunciado no está aquí adjunto, se dará en papel.\r\nDirígete a \"Agregar entrega\" para descargar el contenido.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=393270",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-121154",
+      "title": "Charla Desarrollo Web",
+      "course": "TUTORÍA 2DAW",
+      "courseCode": "TUTORÍA 2D",
+      "dueDate": "2026-10-23",
+      "dueTime": "08:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Vendrán a visitarnos dos antiguos alumnos (Víctor y Josemi), uno es desarrollador web en su propia empresa, el otro es antiguo alumno del año pasado que ha conseguido trabajo en el sector.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4823",
+      "source": "moodle",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "moodle-ev-75146",
+      "title": "Se abre 2DAW_DIW_UD03_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-10-23",
+      "dueTime": "11:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217870",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75360",
+      "title": "Se cierra 2DAW_DIW_UD03_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-10-23",
+      "dueTime": "12:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217870",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-96702",
+      "title": "Vencimiento de Practica PC Building Simulator",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-10-30",
+      "dueTime": "14:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Descargar Juego:\r\n\nhttps://drive.google.com/file/d/1R67dRMb0338QU0BLXMxarflnZprGT66H/view?usp=sharing\r\n\r\nEl fichero .zip contiene dos partidas guardadas que tendréis que restaurar en vuestro equipo.\r\nLa primera contiene 3 equipos que hay que reparar:\r\n\r\n\r\nOrdenador 1. Eliminar Virus / Limpiar Polvo.    0.5 puntos\r\nOrdenador 2. Reemplazar tarjeta gráfica.       1 punto\r\nOrdenador 3. Cambiar Disco Duro.                    1 punto\r\n\r\nLa segunda partida contiene 5 equipos que hay que reparar:\r\n\r\n\r\nOrdenador 4. Mejorar 16 Gb Ram.                                                            1 punto\r\nOrdenador 5. Instalar fuente alimentación y ejecutar 3dMark     1.5 puntos.\r\nOrdenador 6. Reemplazar MotherBoard .                                              2 puntos.\r\nOrdenador 7. Reparar equipo Papa Noel.                                            1.5 puntos.\r\nOrdenador 8. Montar equipo desde 0 (Feudal Fantasy 13).            1.5 puntos.\r\n\r\nDebéis informar al profesor conforme vayáis reparando los equipos.  Debéis subir un archivo con una captura de pantalla por cada equipo reparado donde se vea todas las tareas referentes a ese equipo en verde.",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=259509&action=editsubmission",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-96595",
+      "title": "Vencimiento de 2.1 Configurando Bind según contenido 2.3 (CE5.a,CE5.b)",
+      "course": "Despliegue de aplicaciones web",
+      "courseCode": "DESPLIEGUE",
+      "dueDate": "2026-10-31",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se trata de hacer un trabajo con LibreOffice Writer llamado actividad21tunombre2627.odt  con capturas de pantalla y explicaciones sobre el tutorial.\r\nMUY IMPORTANTE:\r\n\r\nPARA HACER EL PUNTO 3 DEL TUTORIAL, HABRÁS DE CONFIGURAR UN DOMINIO LLAMADO tunombre2627.es NO isidroarcenegui.es \r\nPARA HACER EL PUNTO 4 DEL TUTORIAL, HABRÁS DE CREAR UN DOMINIO GRATUITO LLAMADO tunombre2627.atwebpages.com, NO el que viene en el tutorial (josejl70.atwebpages.com)",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=259390",
+      "source": "moodle",
+      "color": "#10b981"
+    },
+    {
+      "id": "moodle-ev-96704",
+      "title": "Vencimiento de T1 - Tarea 1 - Actividades Libro",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-11-01",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "En esta tarea se entregara un documento con todas las actividades propuesta en el libro, actividades, investiga y tipo test.\r\n\r\nPara la entrega de esta actividad se entregara un documento de libre office y un documento en pdf (convertir el documento libre office a pdf) con el nombre T1_Actividades_Libro_1ºApellido_2ºApellido_1ºNombre_2ºNombre.extension. Ejemplo:\r\nMi nombre es Juan Miguel Muñoz Salgado,  se entregara dos documentos nombrados:\r\n          T1_Actividades_Libro_Munoz_Salgado_Juan_Miguel.odt\r\n          T1_Actividades_Libro_Munoz_Salgado_Juan_Miguel.pdf",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=259515&action=editsubmission",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-76109",
+      "title": "Vencimiento de ANTEPROYECTO",
+      "course": "2DAW_PI_Proyecto Intermodular de Desarrollo de Aplicaciones Web",
+      "courseCode": "2DAW_PI_PR",
+      "dueDate": "2026-11-02",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Vencimiento de Tarea",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=218943",
+      "source": "moodle",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "moodle-ev-96607",
+      "title": "Vencimiento de 2.2 Instala y configura LDAP y NFS según contenido 2.7 (CE5.c,CE5.d,CE5.e,CE5.f)",
+      "course": "Despliegue de aplicaciones web",
+      "courseCode": "DESPLIEGUE",
+      "dueDate": "2026-11-07",
+      "dueTime": "23:59",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se trata de hacer un trabajo con LibreOffice (.odt) llamado actividad2.2TUNOMBRE2627.odt con capturas y explicaciones referidas al tutorial 2.7. Recuerda que, en la configuración del cliente LDAP se hace el apartado A) solamente.\r\nRecuerda que el dominio para este ejercicio no es ejemplo.com sino tu ejemplotunombre2627.com (tendrás que cambiar muchas veces la palabra ejemplo por tu nombre, como en dc=ejemplo cambiarlo por dc=ejemplotunombre2627",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=259393",
+      "source": "moodle",
+      "color": "#10b981"
+    },
+    {
+      "id": "moodle-ev-68569",
+      "title": "Vencimiento de Entrega prueba práctica UD3 26-27",
+      "course": "Desarrollo web en entorno servidor",
+      "courseCode": "DESARROLLO",
+      "dueDate": "2026-11-09",
+      "dueTime": "14:45",
+      "status": "pending",
+      "priority": "high",
+      "description": "Vencimiento de Tarea",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=198743",
+      "source": "moodle",
+      "color": "#ec4899"
+    },
+    {
+      "id": "moodle-ev-75147",
+      "title": "Se abre 2DAW_DIW_T04_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-11-10",
+      "dueTime": "08:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217871",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75361",
+      "title": "Se cierra 2DAW_DIW_T04_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2026-11-10",
+      "dueTime": "09:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217871",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-184172",
+      "title": "Vencimiento de T2 - Tarea 2 - Particiones (GParted) - Instalación Window 10_MC",
+      "course": "Sistemas informáticos",
+      "courseCode": "SISTEMAS I",
+      "dueDate": "2026-11-10",
+      "dueTime": "23:55",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se debe de realizar en la clase del día 9/11/2026:\r\nPasos a realizar:\r\nForzar instala EFI\r\n1 - Crea una maquina con los requisitos necesarios para la instalación de Windows 10 e instálalo.\r\n2 - Entra con Gparted en la maquina anterior y haz captura de las Particiones. \r\n3 - Crea una maquina con los requisitos necesarios para la instalación de Windows 10 . Entra con Gparted y haz el particionado correcto a mano. Instala Windows 10.\r\n\r\nForzar instala MBR\r\n\r\n1 - Crea una maquina con los requisitos necesarios para la instalación de Windows 10 e instálalo.\r\n2 - Entra con Gparted en la maquina anterior y haz captura de las Particiones. \r\n3 - Crea una maquina con los requisitos necesarios para la instalación de Windows 10 . Entra con Gparted y haz el particionado correcto a mano. Instala Windows 10.\r\n\r\nEn esta tarea, necesito que se entregue un documento .pdf con capturas de cada paso a paso y se nombre de la siguiente forma:\r\n          T2_tarea2_ParticionesGparted_Apellido1_Apellido2_Nombre.pdf",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=461667&action=editsubmission",
+      "source": "moodle",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "moodle-ev-75152",
+      "title": "Se abre 2DAW_DIW_T09_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2027-01-12",
+      "dueTime": "08:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217876",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75366",
+      "title": "Se cierra 2DAW_DIW_T09_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2027-01-12",
+      "dueTime": "09:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217876",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75153",
+      "title": "Se abre 2DAW_DIW_T10_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2027-01-19",
+      "dueTime": "08:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217877",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75367",
+      "title": "Se cierra 2DAW_DIW_T10_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2027-01-19",
+      "dueTime": "09:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217877",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75154",
+      "title": "Se abre 2DAW_DIW_T11_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2027-01-26",
+      "dueTime": "08:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se abre Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217878",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-ev-75368",
+      "title": "Se cierra 2DAW_DIW_T11_EX01",
+      "course": "2DAW_DIW_Diseño de interfaces Web",
+      "courseCode": "2DAW_DIW_D",
+      "dueDate": "2027-01-26",
+      "dueTime": "09:15",
+      "status": "pending",
+      "priority": "high",
+      "description": "Se cierra Cuestionario",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/quiz/view.php?id=217878",
+      "source": "moodle",
+      "color": "#6366f1"
+    },
+    {
+      "id": "moodle-manual-1794361714650",
+      "title": "Examen T01 PHP",
+      "course": "Desarrollo web en entorno servidor",
+      "courseCode": "DESARR",
+      "dueDate": "2026-11-12",
+      "dueTime": "23:55",
+      "status": "pending",
+      "priority": "high",
+      "color": "#6366f1",
+      "moodleUrl": "https://educacionadistancia.juntadeandalucia.es/centros/sevilla/course/view.php?id=4864",
+      "description": "",
+      "source": "moodle"
+    }
+  ],
+  "personalEvents": [],
+  "schedule": [],
+  "grades": [
+    {
+      "id": "grd-course-4876",
+      "subject": "2DAW_CTOP_Optativa-Iniciación a la programación en Python-AN05084",
+      "color": "#f43f5e",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-4874",
+      "subject": "2DAW_DIW_Diseño de interfaces Web",
+      "color": "#6366f1",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-4873",
+      "subject": "2DAW_DWEC_Desarrollo web en entorno cliente",
+      "color": "#6366f1",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-4875",
+      "subject": "2DAW_PI_Proyecto Intermodular de Desarrollo de Aplicaciones Web",
+      "color": "#f59e0b",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-4864",
+      "subject": "Desarrollo web en entorno servidor",
+      "color": "#ec4899",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-5517",
+      "subject": "Despliegue de aplicaciones web",
+      "color": "#10b981",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-278",
+      "subject": "Punto de encuentro del I.E.S. Isidro de Arcenegui y Carmona",
+      "color": "#f59e0b",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-4823",
+      "subject": "TUTORÍA 2DAW",
+      "color": "#f59e0b",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "grd-course-6146",
+      "subject": "Sistemas informáticos",
+      "color": "#f43f5e",
+      "targetGrade": 7,
+      "items": [
+        {
+          "name": "Tareas y Prácticas Moodle",
+          "weight": 40,
+          "score": null
+        },
+        {
+          "name": "Examen / Prueba Final",
+          "weight": 60,
+          "score": null
+        }
+      ]
+    }
+  ],
+  "notes": [],
+  "pomodoroStats": {
+    "completedSessions": 0,
+    "totalMinutes": 0
+  }
+}

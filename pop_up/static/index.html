@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodle Assistant • Educación a Distancia (Junta de Andalucía)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- ==================== BARRA LATERAL (SIDEBAR) ==================== -->
+    <aside class="sidebar">
+      <div class="brand-box">
+        <div class="brand-logo">M</div>
+        <div>
+          <div class="brand-title">Moodle Assistant</div>
+          <div class="brand-subtitle">Centros Sevilla • Dark Edition</div>
+        </div>
+      </div>
+
+      <!-- Perfil Enlazado Rápido -->
+      <div class="sidebar-profile" onclick="switchView('profile')" title="Iniciar sesión o sincronizar mi perfil de Moodle">
+        <div class="avatar-circle" id="sbAvatar">MD</div>
+        <div class="profile-meta">
+          <div class="profile-name-row">
+            <span class="status-dot" id="sbStatusDot"></span>
+            <span id="sbStudentName">Sin sesión iniciada</span>
+          </div>
+          <div class="profile-uni" id="sbUniversity">Moodle Centros Sevilla</div>
+        </div>
+        <span style="color: var(--text-muted); font-size: 12px;">🔐</span>
+      </div>
+
+      <!-- Menú de Navegación -->
+      <nav class="nav-menu">
+        <div class="nav-section-label">Cuenta y Resumen</div>
+
+        <button class="nav-btn" data-view="profile" onclick="switchView('profile')">
+          <span class="nav-btn-left"><span>🔐</span> <span>Iniciar Sesión Moodle</span></span>
+          <span class="nav-badge moodle" id="badgeLoginStatus">Conectar</span>
+        </button>
+
+        <button class="nav-btn active" data-view="dashboard" onclick="switchView('dashboard')">
+          <span class="nav-btn-left"><span>🏠</span> <span>Resumen General</span></span>
+        </button>
+
+        <button class="nav-btn" data-view="tasks" onclick="switchView('tasks')">
+          <span class="nav-btn-left"><span>✅</span> <span>Mis Tareas Moodle</span></span>
+          <span class="nav-badge" id="badgePendingTasks">0</span>
+        </button>
+
+        <div class="nav-section-label">Calendarios y Clases</div>
+
+        <button class="nav-btn" data-view="moodle-calendar" onclick="switchView('moodle-calendar')">
+          <span class="nav-btn-left"><span>🎓</span> <span>Calendario de Moodle</span></span>
+          <span class="nav-badge moodle" id="badgeMoodleCal">0</span>
+        </button>
+
+        <button class="nav-btn" data-view="personal-calendar" onclick="switchView('personal-calendar')">
+          <span class="nav-btn-left"><span>🗓️</span> <span>Mi Calendario Personal</span></span>
+          <span class="nav-badge" id="badgePersonalCal">0</span>
+        </button>
+
+        <button class="nav-btn" data-view="schedule" onclick="switchView('schedule')">
+          <span class="nav-btn-left"><span>⏰</span> <span>Horario de Clases</span></span>
+        </button>
+
+        <div class="nav-section-label">Productividad Extra</div>
+
+        <button class="nav-btn" data-view="studio" onclick="switchView('studio')">
+          <span class="nav-btn-left"><span>🧠</span> <span>Estudio, Notas & Media</span></span>
+        </button>
+      </nav>
+
+      <!-- Pie de Sidebar: Acciones de Escritorio -->
+      <div class="sidebar-footer">
+        <button class="btn btn-primary" onclick="resyncMoodleNow()" id="btnQuickSyncSidebar" title="Volver a sincronizar tareas y calendario desde tu Moodle">
+          🔄 Sincronizar Moodle Ahora
+        </button>
+        <button class="btn btn-moodle" onclick="launchFloatingPopup()" title="Abre un mini asistente flotante siempre visible que puedes mover por todo tu escritorio">
+          📌 Mini Pop-Up Flotante
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="openMyMoodleCampus()">
+          🌐 Abrir Moodle Sevilla en Google
+        </button>
+      </div>
+    </aside>
+
+    <!-- ==================== ÁREA PRINCIPAL ==================== -->
+    <main class="main-area">
+      <!-- Barra Superior -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="view-title" id="topbarTitle">🏠 Resumen General del Estudiante</h1>
+          <div class="live-clock" id="liveClock">--:--:--</div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="globalSearchInput" placeholder="Buscar tarea, asignatura o en Google..." oninput="handleGlobalSearch(this.value)" onkeydown="if(event.key==='Enter' && this.value.trim()){ openInGoogle('', this.value.trim(), 'google_search'); }" />
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="openTaskModal()">
+            ➕ Tarea Manual
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="openPersonalEventModal()">
+            📅 + Evento Personal
+          </button>
+        </div>
+      </header>
+
+      <!-- Contenedor de Vistas -->
+      <div class="view-container">
+
+        <!-- ================================================================
+             VISTA 1: DASHBOARD / RESUMEN GENERAL
+             ================================================================ -->
+        <section class="view-panel active" id="view-dashboard">
+          <!-- Banner de aviso si aún no ha iniciado sesión en Moodle -->
+          <div id="unlinkedAlertBanner" class="card" style="display:none; background:linear-gradient(135deg, rgba(249,115,22,0.18) 0%, rgba(99,102,241,0.18) 100%); border-color:rgba(249,115,22,0.45); margin-bottom:20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+              <div>
+                <div style="font-size:16px; font-weight:700; color:#fff;">🔐 Conecta tu cuenta de Moodle Centros (Sevilla)</div>
+                <div style="font-size:13px; color:var(--text-secondary); margin-top:4px;">
+                  Inicia sesión con tu usuario de Moodle (<code>educacionadistancia.juntadeandalucia.es/centros/sevilla/my/</code>) para cargar automáticamente tus asignaturas, entregas y el calendario oficial de Moodle.
+                </div>
+              </div>
+              <button class="btn btn-moodle" onclick="switchView('profile')">🔐 Iniciar Sesión en Moodle →</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi-card moodle">
+              <div class="kpi-label">Entregas Moodle Pendientes</div>
+              <div class="kpi-value" id="kpiPendingMoodle">0</div>
+              <div class="kpi-sub" id="kpiUrgentMoodle">0 urgentes (próximos 3 días)</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Asignaturas en tu Moodle</div>
+              <div class="kpi-value" id="kpiCoursesCount">0</div>
+              <div class="kpi-sub" id="kpiPersonalCount">0 eventos personales activos</div>
+            </div>
+            <div class="kpi-card cyan">
+              <div class="kpi-label">Clases en tu Horario</div>
+              <div class="kpi-value" id="kpiScheduleCount">0</div>
+              <div class="kpi-sub" id="kpiNextClassText">Sin clases registradas hoy</div>
+            </div>
+            <div class="kpi-card emerald">
+              <div class="kpi-label">Foco Pomodoro Acumulado</div>
+              <div class="kpi-value" id="kpiStudyMinutes">0m</div>
+              <div class="kpi-sub" id="kpiStudySessions">0 sesiones completadas</div>
+            </div>
+          </div>
+
+          <div class="two-col-grid">
+            <!-- Columna Izquierda: Próximas Tareas de Moodle -->
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">
+                    <span>🔥</span>
+                    <span>Próximas Entregas de tu Moodle <small style="color:var(--text-muted); font-weight:400;">(Pincha para abrir en Google Chrome)</small></span>
+                  </div>
+                  <button class="btn btn-outline btn-sm" onclick="switchView('moodle-calendar')">Calendario Moodle →</button>
+                </div>
+                <div class="task-list" id="dashboardMoodleTasks"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>🗓️</span> <span>Próximos Eventos de Mi Calendario Personal</span></div>
+                  <button class="btn btn-outline btn-sm" onclick="openPersonalEventModal()">+ Añadir Evento</button>
+                </div>
+                <div class="task-list" id="dashboardPersonalEvents"></div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Perfil Moodle, Cursos Sincronizados y Horario de Hoy -->
+            <div>
+              <div class="card" style="background: linear-gradient(145deg, rgba(99,102,241,0.14) 0%, var(--bg-surface) 100%);">
+                <div class="card-header">
+                  <div class="card-title"><span>🔗</span> <span>Tu Perfil de Moodle Enlazado</span></div>
+                  <button class="btn btn-primary btn-sm" onclick="switchView('profile')">🔐 Cuenta Moodle</button>
+                </div>
+                <div id="dashboardProfileSummary" style="display:flex; flex-direction:column; gap:8px; font-size:13px;"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>📚</span> <span>Mis Asignaturas Sincronizadas de Moodle</span></div>
+                </div>
+                <div class="task-list" id="dashboardCoursesList"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>⏰</span> <span>Tus Clases de Hoy</span></div>
+                  <button class="btn btn-outline btn-sm" onclick="switchView('schedule')">Editar Horario</button>
+                </div>
+                <div class="task-list" id="dashboardTodaySchedule"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             VISTA 2: INICIAR SESIÓN EN MOODLE Y SINCRONIZAR PERFIL
+             ================================================================ -->
+        <section class="view-panel" id="view-profile">
+          <div class="two-col-grid">
+            <!-- Formulario de Inicio de Sesión Directo en Moodle -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title"><span>🔐</span> <span>Iniciar Sesión en Moodle (Junta de Andalucía / Sevilla)</span></div>
+                <span class="pill" id="profileSyncBadge">Sin sincronizar</span>
+              </div>
+
+              <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">
+                Introduce tus credenciales de acceso a <strong>Moodle Centros</strong> para descargar automáticamente tu perfil, tus asignaturas matriculadas, todas las entregas de tu calendario de Moodle y tus calificaciones:
+              </p>
+
+              <form id="moodleLoginForm" onsubmit="loginAndSyncMoodle(event)">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label>🏛️ Plataforma Moodle en Sevilla (Selector Rápido)</label>
+                    <select class="form-control" id="profPlatformPreset" onchange="applySevillaPlatformPreset(this.value)">
+                      <option value="https://educacionadistancia.juntadeandalucia.es/centros/sevilla/my/">Moodle Centros Sevilla (Curso 26/27 Actual)</option>
+                      <option value="https://educacionadistancia.juntadeandalucia.es/centros/sevilla25/my/">Moodle Centros Sevilla (Curso 25/26)</option>
+                      <option value="https://educacionadistancia.juntadeandalucia.es/formacionprofesional/my/">Aula Virtual FPAndalucía (FP a Distancia)</option>
+                      <option value="https://educacionadistancia.juntadeandalucia.es/adultos/my/">Educación Permanente / Adultos Andalucía</option>
+                      <option value="custom">Otra URL de Moodle personalizada...</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>🔑 Método de Autenticación</label>
+                    <select class="form-control" id="profAuthType">
+                      <option value="auto">Automático: Acceso Único Educación (Usuario IdEA / Pasen / Séneca - CAS) + Local</option>
+                      <option value="cas">Acceso Único Educación (CAS edea.juntadeandalucia.es - Usuario IdEA)</option>
+                      <option value="local">Otro tipo de acceso (Usuario local de Moodle sin IdEA)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group full">
+                    <label>🌐 Enlace de tu Moodle (Área Personal)</label>
+                    <input type="url" class="form-control" id="profMoodleEntryUrl" required
+                           value="https://educacionadistancia.juntadeandalucia.es/centros/sevilla/my/"
+                           placeholder="https://educacionadistancia.juntadeandalucia.es/centros/sevilla/my/" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>👤 Usuario IdEA (Pasen / Séneca) o Usuario Moodle</label>
+                    <input type="text" class="form-control" id="profUsername" placeholder="Ej: tu usuario IdEA de Pasen/Séneca" autocomplete="username" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>🔒 Contraseña de Moodle</label>
+                    <div style="display:flex; gap:6px;">
+                      <input type="password" class="form-control" id="profPassword" style="flex:1;" placeholder="Tu contraseña de Moodle" autocomplete="current-password" />
+                      <button type="button" class="btn btn-outline btn-sm" onclick="togglePasswordVisibility()" title="Mostrar / ocultar contraseña">👁️</button>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Nombre visible (se rellena solo al iniciar sesión)</label>
+                    <input type="text" class="form-control" id="profStudentName" placeholder="Se obtendrá de tu perfil de Moodle" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Curso / Estudios (Opcional)</label>
+                    <input type="text" class="form-control" id="profDegree" placeholder="Ej: 2º Bachillerato / Ciclo Formativo" />
+                  </div>
+
+                  <div class="form-group full">
+                    <label>🎯 Al pinchar en una tarea del Calendario de Moodle:</label>
+                    <select class="form-control" id="profOpenMode">
+                      <option value="both">Abrir directamente la tarea en mi Moodle en Google Chrome (o buscarla en Google si no tiene enlace)</option>
+                      <option value="google_search">Buscar el nombre de la tarea directamente en Google (google.com) en Google Chrome</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
+                  <button type="submit" class="btn btn-moodle" id="btnLoginMoodleSubmit">
+                    🔐 Iniciar Sesión y Sincronizar Todo mi Moodle
+                  </button>
+                  <button type="button" class="btn btn-outline" onclick="openMyMoodleCampus()">
+                    🌐 Abrir Moodle Sevilla en Google Chrome
+                  </button>
+                </div>
+              </form>
+
+              <!-- Opciones Alternativas: URL .ics / Archivo .ics / Cookie MoodleSession / Token -->
+              <div style="margin-top:24px; padding-top:18px; border-top:1px solid var(--border-subtle);">
+                <div style="font-weight:700; font-size:14px; margin-bottom:10px; color:var(--accent-cyan);">
+                  ⚙️ Métodos Adicionales de Sincronización (Calendario .ICS, Cookie de Sesión o Token)
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group full">
+                    <label>📅 URL del Calendario de Moodle (.ics / iCal)</label>
+                    <input type="url" class="form-control" id="profIcsUrl"
+                           placeholder="https://educacionadistancia.juntadeandalucia.es/centros/sevilla/calendar/export_execute.php?..." />
+                    <small style="color:var(--text-muted); font-size:11.5px;">
+                      En Moodle Sevilla: ve a <em>Calendario → Exportar calendario → Obtener URL del calendario</em> y pégala aquí.
+                    </small>
+                  </div>
+
+                  <div class="form-group full">
+                    <label>📂 O selecciona un archivo <code>.ics</code> descargado de tu Moodle</label>
+                    <input type="file" class="form-control" id="profIcsFileInput" accept=".ics,text/calendar" onchange="handleIcsFileSelected(event)" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>🍪 Cookie <code>MoodleSession</code> (Si entras con Cl@ve/Certificado)</label>
+                    <input type="text" class="form-control" id="profSessionCookie" placeholder="Valor de MoodleSession del navegador (opcional)" />
+                  </div>
+
+                  <div class="form-group">
+                    <label>🔑 Token WebService (<code>wstoken</code> opcional)</label>
+                    <input type="password" class="form-control" id="profApiToken" placeholder="Clave de Moodle mobile web service (opcional)" />
+                  </div>
+                </div>
+
+                <div style="margin-top:12px;">
+                  <button type="button" class="btn btn-primary btn-sm" onclick="loginAndSyncMoodle(event)">
+                    🔄 Sincronizar con estos parámetros
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Asignaturas sincronizadas y estado -->
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>📚</span> <span>Asignaturas detectadas en tu perfil de Moodle</span></div>
+                </div>
+                <div id="profileSyncedCoursesContainer" class="task-list"></div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>💡</span> <span>Cómo funciona la conexión con Moodle Sevilla</span></div>
+                </div>
+                <div class="help-steps">
+                  <strong>1. Inicio de sesión directo (Automático):</strong>
+                  <ol>
+                    <li>Con el enlace <code>https://educacionadistancia.juntadeandalucia.es/centros/sevilla/my/</code> y tu usuario y contraseña de Moodle/IdEA, la aplicación inicia sesión directamente y extrae tus cursos, tareas de la línea de tiempo y eventos del calendario.</li>
+                    <li>Al pinchar en cualquier tarea del <strong>Calendario de Moodle</strong>, se abrirá <strong>Google Chrome</strong> llevándote directamente a esa entrega en Moodle Sevilla (o buscándola en Google).</li>
+                  </ol>
+                </div>
+
+                <div style="margin-top:18px; padding-top:14px; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+                  <div>
+                    <div style="font-weight:700; font-size:13px;">Gestión de Datos Locales</div>
+                    <div style="font-size:11.5px; color:var(--text-muted);">Guardado en <code>pop_up/data/assistant_data.json</code></div>
+                  </div>
+                  <div style="display:flex; gap:8px;">
+                    <button class="btn btn-outline btn-sm" onclick="exportBackupJson()">⬇️ Exportar JSON</button>
+                    <button class="btn btn-danger btn-sm" onclick="clearAllAppData()">🗑️ Vaciar Todo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             VISTA 3: MIS TAREAS DE MOODLE
+             ================================================================ -->
+        <section class="view-panel" id="view-tasks">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><span>✅</span> <span>Mis Tareas y Entregas de Moodle</span></div>
+              <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                <div class="filter-tabs" id="taskFilterTabs">
+                  <button class="filter-tab active" onclick="setTaskFilter('all', this)">Todas</button>
+                  <button class="filter-tab" onclick="setTaskFilter('pending', this)">Pendientes</button>
+                  <button class="filter-tab" onclick="setTaskFilter('in_progress', this)">En progreso</button>
+                  <button class="filter-tab" onclick="setTaskFilter('completed', this)">Completadas</button>
+                </div>
+                <select class="form-control" id="taskCourseFilter" style="width:auto; padding:6px 10px;" onchange="renderTasksView()">
+                  <option value="all">Todas las asignaturas</option>
+                </select>
+                <button class="btn btn-moodle btn-sm" onclick="resyncMoodleNow()">🔄 Sincronizar Moodle</button>
+                <button class="btn btn-primary btn-sm" onclick="openTaskModal()">+ Añadir Tarea</button>
+              </div>
+            </div>
+
+            <div class="task-list" id="allTasksListContainer"></div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             VISTA 4: CALENDARIO DE MOODLE (PINCHAR TAREA -> LLEVA A GOOGLE)
+             ================================================================ -->
+        <section class="view-panel" id="view-moodle-calendar">
+          <div class="calendar-layout">
+            <!-- Cuadrícula Mensual del Calendario de Moodle -->
+            <div class="card">
+              <div class="cal-toolbar">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <button class="btn btn-outline btn-sm" onclick="changeMoodleCalMonth(-1)">◀ Anterior</button>
+                  <button class="btn btn-outline btn-sm" onclick="resetMoodleCalToday()">Hoy</button>
+                  <button class="btn btn-outline btn-sm" onclick="changeMoodleCalMonth(1)">Siguiente ▶</button>
+                </div>
+                <div class="cal-month-title" id="moodleCalMonthTitle">Mes</div>
+                <div style="display:flex; gap:6px;">
+                  <button class="btn btn-moodle btn-sm" onclick="resyncMoodleNow()">🔄 Sincronizar</button>
+                  <button class="btn btn-primary btn-sm" onclick="openTaskModal()">+ Tarea</button>
+                </div>
+              </div>
+
+              <div style="margin-bottom:10px; padding:8px 12px; background:rgba(249,115,22,0.12); border:1px solid rgba(249,115,22,0.3); border-radius:8px; font-size:12.5px; color:#fed7aa; display:flex; align-items:center; justify-content:space-between;">
+                <span>🎯 <strong>Acción Directa Activa:</strong> Al pinchar sobre cualquier tarea en el calendario de Moodle, te llevará directamente hasta ella en <strong>Google Chrome</strong>.</span>
+              </div>
+
+              <div class="cal-grid-header">
+                <div class="cal-weekday">Lun</div>
+                <div class="cal-weekday">Mar</div>
+                <div class="cal-weekday">Mié</div>
+                <div class="cal-weekday">Jue</div>
+                <div class="cal-weekday">Vie</div>
+                <div class="cal-weekday">Sáb</div>
+                <div class="cal-weekday">Dom</div>
+              </div>
+              <div class="cal-grid" id="moodleCalendarGrid"></div>
+            </div>
+
+            <!-- Panel Lateral del Calendario de Moodle -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">
+                  <span>🎓</span>
+                  <span id="moodleCalSideTitle">Entregas del Calendario de Moodle</span>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="clearMoodleDayFilter()">Ver Todo el Mes</button>
+              </div>
+              <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+                Haz clic en cualquier tarea para abrirla inmediatamente en <strong>Google Chrome</strong>:
+              </p>
+              <div class="task-list" id="moodleCalSideList"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             VISTA 5: MI CALENDARIO PERSONAL (AÑADIR COSAS PROPIAS)
+             ================================================================ -->
+        <section class="view-panel" id="view-personal-calendar">
+          <div class="calendar-layout">
+            <!-- Cuadrícula Mensual del Calendario Personal -->
+            <div class="card">
+              <div class="cal-toolbar">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <button class="btn btn-outline btn-sm" onclick="changePersonalCalMonth(-1)">◀ Anterior</button>
+                  <button class="btn btn-outline btn-sm" onclick="resetPersonalCalToday()">Hoy</button>
+                  <button class="btn btn-outline btn-sm" onclick="changePersonalCalMonth(1)">Siguiente ▶</button>
+                </div>
+                <div class="cal-month-title" id="personalCalMonthTitle">Mes</div>
+                <button class="btn btn-primary btn-sm" onclick="openPersonalEventModal()">+ Añadir a Mi Calendario</button>
+              </div>
+
+              <div style="margin-bottom:10px; padding:8px 12px; background:rgba(6,182,212,0.1); border:1px solid rgba(6,182,212,0.3); border-radius:8px; font-size:12.5px; color:#a5f3fc;">
+                💡 <strong>Tu Calendario Personal:</strong> Haz clic en cualquier día para filtrar o añadir tus propios exámenes, sesiones de estudio, tutorías o recordatorios.
+              </div>
+
+              <div class="cal-grid-header">
+                <div class="cal-weekday">Lun</div>
+                <div class="cal-weekday">Mar</div>
+                <div class="cal-weekday">Mié</div>
+                <div class="cal-weekday">Jue</div>
+                <div class="cal-weekday">Vie</div>
+                <div class="cal-weekday">Sáb</div>
+                <div class="cal-weekday">Dom</div>
+              </div>
+              <div class="cal-grid" id="personalCalendarGrid"></div>
+            </div>
+
+            <!-- Panel Lateral: Añadir cosas rápido + Lista de eventos personales -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">
+                  <span>📌</span>
+                  <span id="personalCalSideTitle">Mis Eventos y Recordatorios</span>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="clearPersonalDayFilter()">Ver Todos</button>
+              </div>
+
+              <form id="quickPersonalForm" onsubmit="saveQuickPersonalEvent(event)" style="background:var(--bg-elevated); padding:12px; border-radius:10px; border:1px solid var(--border-subtle); margin-bottom:14px;">
+                <div style="font-weight:700; font-size:12.5px; margin-bottom:8px; color:var(--accent-cyan);">➕ Añadir rápido a Mi Calendario</div>
+                <div class="form-grid" style="gap:8px;">
+                  <div class="form-group full">
+                    <input type="text" class="form-control" id="qpTitle" required placeholder="¿Qué quieres añadir? (Ej: Estudiar examen, Tutoría...)" />
+                  </div>
+                  <div class="form-group">
+                    <input type="date" class="form-control" id="qpDate" required />
+                  </div>
+                  <div class="form-group">
+                    <input type="time" class="form-control" id="qpTime" value="17:00" required />
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" id="qpCategory">
+                      <option value="Estudio">📚 Estudio</option>
+                      <option value="Examen">📝 Examen / Control</option>
+                      <option value="Tutoría">👨‍🏫 Tutoría</option>
+                      <option value="Grupo">👥 Trabajo en Grupo</option>
+                      <option value="Personal">⭐ Personal</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="height:100%;">Guardar Evento</button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="task-list" id="personalCalSideList"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             VISTA 6: HORARIO DE CLASES MODIFICABLE
+             ================================================================ -->
+        <section class="view-panel" id="view-schedule">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title"><span>⏰</span> <span>Mi Horario de Clases Modificable (Lunes a Sábado)</span></div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">
+                  Añade tus clases (puedes elegir directamente las asignaturas sincronizadas de tu Moodle) o haz clic sobre cualquier bloque para modificarlo o eliminarlo.
+                </div>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <button class="btn btn-primary" onclick="openScheduleModal()">➕ Añadir Clase al Horario</button>
+              </div>
+            </div>
+
+            <div class="schedule-grid" id="weeklyScheduleGrid"></div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             VISTA 7: ESTUDIO, CALCULADORA DE NOTAS & NOTAS RÁPIDAS
+             ================================================================ -->
+        <section class="view-panel" id="view-studio">
+          <div class="two-col-grid">
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>⏱️</span> <span>Temporizador Pomodoro Vinculado a tus Tareas de Moodle</span></div>
+                </div>
+                <div class="pomodoro-box">
+                  <div style="display:flex; gap:8px; margin-bottom:6px;">
+                    <button class="btn btn-sm btn-primary" onclick="setPomodoroPreset(25, 'Sesión de Enfoque (25 min)')">🍅 Foco 25m</button>
+                    <button class="btn btn-sm btn-outline" onclick="setPomodoroPreset(50, 'Estudio Profundo (50 min)')">🔥 Profundo 50m</button>
+                    <button class="btn btn-sm btn-outline" onclick="setPomodoroPreset(5, 'Descanso Corto (5 min)')">☕ Descanso 5m</button>
+                  </div>
+                  <div style="font-size:12.5px; color:var(--text-secondary);" id="pomoModeLabel">Sesión de Enfoque (25 min)</div>
+                  <div class="pomodoro-digits" id="pomoDigits">25:00</div>
+
+                  <div style="width:100%; max-width:360px; margin-bottom:14px;">
+                    <select class="form-control" id="pomoLinkedTaskSelect">
+                      <option value="">🎯 Vincular sesión a una tarea de Moodle...</option>
+                    </select>
+                  </div>
+
+                  <div style="display:flex; gap:10px;">
+                    <button class="btn btn-primary" id="btnPomoStart" onclick="toggleWebPomodoro()">▶ Iniciar Enfoque</button>
+                    <button class="btn btn-outline" onclick="resetWebPomodoro()">↺ Reiniciar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>📊</span> <span>Calificaciones y Simulador de Media de Moodle</span></div>
+                  <button class="btn btn-primary btn-sm" onclick="addNewGradeSubject()">+ Añadir Asignatura</button>
+                </div>
+                <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+                  Se cargan automáticamente tus asignaturas al iniciar sesión en Moodle. Introduce tus notas para calcular qué necesitas para aprobar (5.0) o llegar a tu objetivo:
+                </p>
+                <div id="gradesCalculatorContainer" style="display:flex; flex-direction:column; gap:14px;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title"><span>📝</span> <span>Bloc de Notas Rápidas por Asignatura</span></div>
+                </div>
+
+                <form onsubmit="addQuickNote(event)" style="background:var(--bg-elevated); padding:14px; border-radius:10px; border:1px solid var(--border-subtle); margin-bottom:16px;">
+                  <div class="form-grid" style="gap:10px;">
+                    <div class="form-group">
+                      <label>Título del apunte</label>
+                      <input type="text" class="form-control" id="noteTitleInput" required placeholder="Ej: Dudas para preguntar en clase" />
+                    </div>
+                    <div class="form-group">
+                      <label>Asignatura</label>
+                      <input type="text" class="form-control" id="noteCourseInput" list="moodleCoursesDatalist" placeholder="Elige o escribe asignatura" />
+                    </div>
+                    <div class="form-group full">
+                      <label>Contenido</label>
+                      <textarea class="form-control" id="noteContentInput" required placeholder="Escribe aquí apuntes, enlaces o recordatorios..."></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-sm" style="margin-top:10px;">💾 Guardar Nota</button>
+                </form>
+
+                <div class="task-list" id="quickNotesContainer"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Lista autocompletable con las asignaturas reales sincronizadas de Moodle -->
+  <datalist id="moodleCoursesDatalist"></datalist>
+
+  <!-- ======================================================================
+       MODAL 1: AÑADIR / EDITAR TAREA DE MOODLE
+       ====================================================================== -->
+  <div class="modal-backdrop" id="taskModalBackdrop">
+    <div class="modal-card">
+      <div class="card-header">
+        <div class="card-title" id="taskModalHeaderTitle">➕ Añadir / Editar Tarea de Moodle</div>
+        <button class="btn btn-outline btn-sm" onclick="closeTaskModal()">✕</button>
+      </div>
+      <form onsubmit="submitTaskModal(event)">
+        <input type="hidden" id="tmId" />
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Título de la Tarea / Entrega de Moodle</label>
+            <input type="text" class="form-control" id="tmTitle" required placeholder="Nombre de la tarea o entrega" />
+          </div>
+          <div class="form-group">
+            <label>Asignatura / Curso Moodle</label>
+            <input type="text" class="form-control" id="tmCourse" list="moodleCoursesDatalist" required placeholder="Asignatura de Moodle" />
+          </div>
+          <div class="form-group">
+            <label>Código Curso</label>
+            <input type="text" class="form-control" id="tmCourseCode" placeholder="Opcional" />
+          </div>
+          <div class="form-group">
+            <label>Fecha Límite de Entrega</label>
+            <input type="date" class="form-control" id="tmDueDate" required />
+          </div>
+          <div class="form-group">
+            <label>Hora Límite</label>
+            <input type="time" class="form-control" id="tmDueTime" value="23:55" required />
+          </div>
+          <div class="form-group">
+            <label>Prioridad</label>
+            <select class="form-control" id="tmPriority">
+              <option value="high">🔴 Alta / Urgente</option>
+              <option value="medium" selected>🟡 Media</option>
+              <option value="low">🟢 Baja</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Color Identificativo</label>
+            <input type="color" class="form-control" id="tmColor" value="#6366f1" style="height:38px; padding:4px;" />
+          </div>
+          <div class="form-group full">
+            <label>URL de la Tarea en Moodle (Al pinchar en el calendario te llevará aquí en Google Chrome)</label>
+            <input type="text" class="form-control" id="tmMoodleUrl" placeholder="https://educacionadistancia.juntadeandalucia.es/centros/sevilla/mod/assign/view.php?id=..." />
+          </div>
+          <div class="form-group full">
+            <label>Descripción / Instrucciones de Entrega</label>
+            <textarea class="form-control" id="tmDescription" placeholder="Detalles de la tarea..."></textarea>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
+          <button type="button" class="btn btn-outline" onclick="closeTaskModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Tarea</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 2: AÑADIR / EDITAR EVENTO EN MI CALENDARIO PERSONAL
+       ====================================================================== -->
+  <div class="modal-backdrop" id="personalEventModalBackdrop">
+    <div class="modal-card">
+      <div class="card-header">
+        <div class="card-title">🗓️ Añadir / Editar Evento en Mi Calendario Personal</div>
+        <button class="btn btn-outline btn-sm" onclick="closePersonalEventModal()">✕</button>
+      </div>
+      <form onsubmit="submitPersonalEventModal(event)">
+        <input type="hidden" id="pmId" />
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Título del Evento o Recordatorio</label>
+            <input type="text" class="form-control" id="pmTitle" required placeholder="Ej: Estudiar tema, examen, tutoría..." />
+          </div>
+          <div class="form-group">
+            <label>Fecha</label>
+            <input type="date" class="form-control" id="pmDate" required />
+          </div>
+          <div class="form-group">
+            <label>Hora</label>
+            <input type="time" class="form-control" id="pmTime" value="17:00" required />
+          </div>
+          <div class="form-group">
+            <label>Categoría</label>
+            <select class="form-control" id="pmCategory">
+              <option value="Estudio">📚 Estudio</option>
+              <option value="Examen">📝 Examen</option>
+              <option value="Tutoría">👨‍🏫 Tutoría</option>
+              <option value="Grupo">👥 Trabajo en Grupo</option>
+              <option value="Personal">⭐ Personal</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Color</label>
+            <input type="color" class="form-control" id="pmColor" value="#38bdf8" style="height:38px; padding:4px;" />
+          </div>
+          <div class="form-group full">
+            <label>Notas adicionales</label>
+            <textarea class="form-control" id="pmNotes" placeholder="Detalles adicionales..."></textarea>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
+          <button type="button" class="btn btn-outline" onclick="closePersonalEventModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar en Mi Calendario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL 3: AÑADIR / EDITAR CLASE DEL HORARIO
+       ====================================================================== -->
+  <div class="modal-backdrop" id="scheduleModalBackdrop">
+    <div class="modal-card">
+      <div class="card-header">
+        <div class="card-title" id="scheduleModalTitle">⏰ Añadir / Modificar Clase del Horario</div>
+        <button class="btn btn-outline btn-sm" onclick="closeScheduleModal()">✕</button>
+      </div>
+      <form onsubmit="submitScheduleModal(event)">
+        <input type="hidden" id="smId" />
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Asignatura (Puedes elegir una de tus asignaturas de Moodle o escribirla)</label>
+            <input type="text" class="form-control" id="smSubject" list="moodleCoursesDatalist" required placeholder="Nombre de la asignatura" oninput="autoFillScheduleCourseUrl(this.value)" />
+          </div>
+          <div class="form-group">
+            <label>Día de la Semana</label>
+            <select class="form-control" id="smDay">
+              <option value="0">Lunes</option>
+              <option value="1">Martes</option>
+              <option value="2">Miércoles</option>
+              <option value="3">Jueves</option>
+              <option value="4">Viernes</option>
+              <option value="5">Sábado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tipo de Sesión</label>
+            <select class="form-control" id="smType">
+              <option value="Teoría">📖 Teoría / Clase</option>
+              <option value="Prácticas">💻 Prácticas</option>
+              <option value="Laboratorio">🔬 Laboratorio</option>
+              <option value="Seminario">🗣️ Seminario</option>
+              <option value="Tutoría">👨‍🏫 Tutoría</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Hora de Inicio</label>
+            <input type="time" class="form-control" id="smStartTime" value="08:15" required />
+          </div>
+          <div class="form-group">
+            <label>Hora de Fin</label>
+            <input type="time" class="form-control" id="smEndTime" value="09:15" required />
+          </div>
+          <div class="form-group">
+            <label>Aula / Grupo</label>
+            <input type="text" class="form-control" id="smRoom" placeholder="Ej: Aula 12 / Online" />
+          </div>
+          <div class="form-group">
+            <label>Profesor/a</label>
+            <input type="text" class="form-control" id="smTeacher" placeholder="Opcional" />
+          </div>
+          <div class="form-group">
+            <label>Color del Bloque</label>
+            <input type="color" class="form-control" id="smColor" value="#6366f1" style="height:38px; padding:4px;" />
+          </div>
+          <div class="form-group">
+            <label>URL Curso en Moodle</label>
+            <input type="text" class="form-control" id="smMoodleUrl" placeholder="Se autocompleta si es un curso sincronizado" />
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:18px;">
+          <button type="button" class="btn btn-danger" id="btnDeleteClassModal" style="display:none;" onclick="deleteCurrentScheduleClass()">🗑️ Eliminar Clase</button>
+          <div style="display:flex; gap:10px; margin-left:auto;">
+            <button type="button" class="btn btn-outline" onclick="closeScheduleModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar Clase</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contenedor de Notificaciones Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,7 +1,5 @@
-# nuevo-proyecto
+# Moodle Desktop Assistant
 
-Repositorio base para el desarrollo del proyecto.
+Aplicación de escritorio para la gestión y sincronización de Moodle Centros Sevilla en tema oscuro, con soporte para ventana de aplicación completa y widget flotante (Pop-Up).
 
-## Estructura
-- `README.md`: Descripción general del proyecto.
-- `.gitignore`: Archivos y directorios ignorados por Git.
+Para más detalles, consulta la documentación completa en [pop_up/README.md](pop_up/README.md).

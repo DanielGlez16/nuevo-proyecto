@@ -6,6 +6,8 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.packages/
+.pip_cache/
 dist/
 build/
 
@@ -20,3 +22,10 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 *.log
+
+# Perfil del navegador local y cookies de sesión
+pop_up/data/desktop_window_profile/
+pop_up/data/moodle_cookies.json
+
+# Exclusiones
+short_yt/
